@@ -1,0 +1,132 @@
+:root {
+  --text: #6b6375;
+  --text-h: #08060d;
+  --bg: #fff;
+  --border: #e5e4e7;
+  --code-bg: #f4f3ec;
+  --accent: #aa3bff;
+  --accent-bg: rgba(170, 59, 255, 0.1);
+  --accent-border: rgba(170, 59, 255, 0.5);
+  --social-bg: rgba(244, 243, 236, 0.5);
+  --shadow:
+    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --mono: ui-monospace, Consolas, monospace;
+
+  font: 18px/145% var(--sans);
+  /*18px — размер (font-size). 145% — межстрочный интервал (line-height). var(--sans) — семейство шрифта (font-family).*/
+  letter-spacing: 0.18px;
+  /*Добавляет микро-отступ между буквами*/
+  color-scheme: light dark;
+  /*Запрещает браузеру самому «дорисовывать» жирный или наклонный шрифт, если в выбранном семействе его нет.*/
+  color: var(--text);
+  background: var(--bg);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  /*Запрещает браузеру самому «дорисовывать» жирный или наклонный шрифт, если в выбранном семействе его нет. */
+  -webkit-font-smoothing: antialiased;
+  /*Это магия для macOS и iOS. Она делает шрифты более тонкими и гладкими, убирая «лесенку» из пикселей.*/
+  -moz-osx-font-smoothing: grayscale;
+  /*Переключает отрисовку шрифта на более четкую, субпиксельную.*/
+
+  @media (max-width: 1024px) {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text: #9ca3af;
+    --text-h: #f3f4f6;
+    --bg: #16171d;
+    --border: #2e303a;
+    --code-bg: #1f2028;
+    --accent: #c084fc;
+    --accent-bg: rgba(192, 132, 252, 0.15);
+    --accent-border: rgba(192, 132, 252, 0.5);
+    --social-bg: rgba(47, 48, 58, 0.5);
+    --shadow:
+      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+  }
+
+  #social .button-icon {
+    filter: invert(1) brightness(2);
+  }
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  /* для мобилок. Если экран меньше 1126px сайт сожмется под его ширину, а не создаст горизонтальную прокрутку.*/
+  margin: 0 auto;
+  /*Магия центрирования. Она берет всё свободное место слева и справа и делит его поровну, прижимая контент к центру*/
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  /*border-left и border-right*/
+  min-height: 100svh;
+  /*Гарантирует, что даже если на странице мало товаров, фон и боковые границы (border-inline) растянутся на всю высоту экрана смартфона или браузера. svh — это современная единица, которая учитывает панель навигации в мобильном Safari/Chrome.
+  Small Viewport Height (Малая высота вьюпорта)*/
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  /*Оно говорит браузеру: «Если я добавлю рамку в 1px, она должна входить в общую ширину 1126px, а не раздувать её*/
+}
+
+body {
+  margin: 0;
+}
+
+/*По умолчанию все браузеры (Chrome, Safari, Firefox) добавляют тегу <body> небольшие внешние отступы (8px)
+Убираем «белую рамку»: Без этой строки твой сайт не будет прилегать к краям экрана. Между границей браузера и твоим контентом (или боковыми линиями border-inline) будет некрасивая щель в 8 пикселей.
+Точный расчет ширины: Твой #root имеет ширину 1126px. Если оставить margin у body, общая ширина страницы станет 1126 + 8 + 8 = 1142px, что может привести к появлению ненужной горизонтальной прокрутки на некоторых экранах.
+*/
+
+h1,
+h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0;
+
+  @media (max-width: 1024px) {
+    font-size: 36px;
+    margin: 20px 0;
+  }
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 8px;
+
+  @media (max-width: 1024px) {
+    font-size: 20px;
+  }
+}
+
+p {
+  margin: 0;
+}
+
+code,
+.counter {
+  font-family: var(--mono);
+  display: inline-flex;
+  border-radius: 4px;
+  color: var(--text-h);
+}
+
+code {
+  font-size: 15px;
+  line-height: 135%;
+  padding: 4px 8px;
+  background: var(--code-bg);
+}

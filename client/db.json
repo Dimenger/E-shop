@@ -1,0 +1,124 @@
+{
+  "electro_panels": [
+    {
+      "id": "1",
+      "title": "Щит распределительный навесной",
+      "brand": "ABB",
+      "model": "Mistral41",
+      "modules": 12,
+      "protection_class": "IP41",
+      "price": 2500,
+      "in_stock": true,
+      "material": "пластик",
+      "sku": "ABB-M41-12"
+    },
+    {
+      "id": "2",
+      "title": "Щит встраиваемый в нишу",
+      "brand": "Schneider Electric",
+      "model": "Resi9",
+      "modules": 24,
+      "protection_class": "IP40",
+      "price": 4800,
+      "in_stock": true,
+      "material": "пластик",
+      "sku": "SE-R9-24"
+    },
+    {
+      "id": "3",
+      "title": "Корпус металлический ЩРн",
+      "brand": "IEK",
+      "model": "TITAN",
+      "modules": 36,
+      "protection_class": "IP54",
+      "price": 3200,
+      "in_stock": false,
+      "material": "металл",
+      "sku": "IEK-SHRN-36"
+    },
+    {
+      "id": "4",
+      "title": "Щит мультимедийный",
+      "brand": "Hager",
+      "model": "Volta",
+      "modules": 48,
+      "protection_class": "IP30",
+      "price": 12500,
+      "in_stock": true,
+      "material": "пластик/металл",
+      "sku": "HAG-VOL-48"
+    },
+    {
+      "id": "5",
+      "title": "Щит пылевлагозащищенный",
+      "brand": "Legrand",
+      "model": "Plexo",
+      "modules": 8,
+      "protection_class": "IP65",
+      "price": 3100,
+      "in_stock": true,
+      "material": "термопласт",
+      "sku": "LEG-PLX-8"
+    },
+    {
+      "id": "6",
+      "title": "Шкаф учетно-распределительный",
+      "brand": "IEK",
+      "model": "TREND",
+      "modules": 18,
+      "protection_class": "IP31",
+      "price": 1850,
+      "in_stock": true,
+      "material": "металл",
+      "sku": "IEK-TR-18"
+    },
+    {
+      "id": "7",
+      "title": "Бокс навесной для автоматов",
+      "brand": "EKF",
+      "model": "Basic",
+      "modules": 6,
+      "protection_class": "IP40",
+      "price": 650,
+      "in_stock": true,
+      "material": "пластик",
+      "sku": "EKF-BS-6"
+    },
+    {
+      "id": "8",
+      "title": "Щит герметичный",
+      "brand": "DKC",
+      "model": "RAM block",
+      "modules": 72,
+      "protection_class": "IP66",
+      "price": 22000,
+      "in_stock": false,
+      "material": "сталь",
+      "sku": "DKC-RB-72"
+    },
+    {
+      "id": "9",
+      "title": "Встраиваемый распределительный щит",
+      "brand": "VIKO",
+      "model": "Lotus",
+      "modules": 36,
+      "protection_class": "IP40",
+      "price": 2900,
+      "in_stock": true,
+      "material": "пластик",
+      "sku": "VIK-LOT-36"
+    },
+    {
+      "id": "10",
+      "title": "Щит малых габаритов",
+      "brand": "TDM",
+      "model": "SQ",
+      "modules": 4,
+      "protection_class": "IP20",
+      "price": 450,
+      "in_stock": true,
+      "material": "пластик",
+      "sku": "TDM-SQ-4"
+    }
+  ]
+}
