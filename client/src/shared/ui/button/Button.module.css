@@ -1,0 +1,45 @@
+.base {
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: 0.2s;
+    border: none;
+}
+
+/* variants */
+.nav-button {
+    background: #3b82f6;
+    color: white;
+    width: 180px;
+    height: 40px;
+}
+
+.confirm {
+    background: #e5e7eb;
+    color: black;
+}
+
+.delete {
+    background: #ef4444;
+    color: white;
+}
+
+/* sizes */
+.sm {
+    font-size: 12px;
+}
+
+.md {
+    font-size: 14px;
+}
+
+.lg {
+    font-size: 18px;
+}
+
+/* states */
+.loading {
+    opacity: 0.6;
+    pointer-events: none;
+}

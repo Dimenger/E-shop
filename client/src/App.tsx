@@ -3,12 +3,12 @@ import {
   RouterProvider,
   type RouteObject,
 } from "react-router";
-import { Layout } from "./components/layout/layout";
-import { MainPage } from "./components/main-page/main-page";
-import { Electro } from "./components/electro/electro";
-import { ErrorPage } from "./components/error-page/error-page";
-import { electroLoader } from "./routes/electroLoader";
-import { LoaderSpinner } from "./components/ui/loader-spinner";
+import { Layout } from "./widgets/layout/layout";
+import { Home } from "./pages/home/home";
+import { ErrorPage } from "./pages/error-page/error-page";
+import { LoaderSpinner } from "./shared/ui/loader-spinner";
+import { SinglePhasePage } from "./pages/single-phase-page/single-phase-page";
+import { getSinglePhaseLoader } from "./features/loaders/getSinglePhase.loader";
 
 // import styles from "./App.module.css";
 
@@ -18,11 +18,11 @@ const routes = [
     element: <Layout />,
     errorElement: <ErrorPage />,
     children: [
-      { index: true, element: <MainPage /> },
+      { index: true, element: <Home /> },
       {
-        path: "electro",
-        element: <Electro />,
-        loader: electroLoader,
+        path: "single-phase",
+        element: <SinglePhasePage />,
+        loader: getSinglePhaseLoader,
         HydrateFallback: LoaderSpinner,
       },
     ],
