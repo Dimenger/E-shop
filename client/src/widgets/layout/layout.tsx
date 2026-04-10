@@ -3,11 +3,14 @@
 import { Outlet, ScrollRestoration } from "react-router";
 
 import styles from "./layout.module.css";
+import { Header } from "../../widgets/header/header";
 
 export const Layout = () => {
   return (
     <div className={styles.wrapper}>
-      <header className={styles.header}>Header</header>
+      <header className={styles.header}>
+        <Header />
+      </header>
       <main className={styles.main}>
         <Outlet />
       </main>

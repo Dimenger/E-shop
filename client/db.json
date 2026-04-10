@@ -1,7 +1,7 @@
 {
-  "electro_panels": [
+  "single-phase": [
     {
-      "id": "1",
+      "id": "sp1",
       "title": "Щит распределительный навесной",
       "brand": "ABB",
       "model": "Mistral41",
@@ -13,7 +13,7 @@
       "sku": "ABB-M41-12"
     },
     {
-      "id": "2",
+      "id": "sp2",
       "title": "Щит встраиваемый в нишу",
       "brand": "Schneider Electric",
       "model": "Resi9",
@@ -25,7 +25,7 @@
       "sku": "SE-R9-24"
     },
     {
-      "id": "3",
+      "id": "sp3",
       "title": "Корпус металлический ЩРн",
       "brand": "IEK",
       "model": "TITAN",
@@ -37,7 +37,7 @@
       "sku": "IEK-SHRN-36"
     },
     {
-      "id": "4",
+      "id": "sp4",
       "title": "Щит мультимедийный",
       "brand": "Hager",
       "model": "Volta",
@@ -49,7 +49,7 @@
       "sku": "HAG-VOL-48"
     },
     {
-      "id": "5",
+      "id": "sp5",
       "title": "Щит пылевлагозащищенный",
       "brand": "Legrand",
       "model": "Plexo",
@@ -59,9 +59,11 @@
       "in_stock": true,
       "material": "термопласт",
       "sku": "LEG-PLX-8"
-    },
+    }
+  ],
+  "three-phase": [
     {
-      "id": "6",
+      "id": "tp1",
       "title": "Шкаф учетно-распределительный",
       "brand": "IEK",
       "model": "TREND",
@@ -73,7 +75,7 @@
       "sku": "IEK-TR-18"
     },
     {
-      "id": "7",
+      "id": "tp2",
       "title": "Бокс навесной для автоматов",
       "brand": "EKF",
       "model": "Basic",
@@ -85,7 +87,7 @@
       "sku": "EKF-BS-6"
     },
     {
-      "id": "8",
+      "id": "tp3",
       "title": "Щит герметичный",
       "brand": "DKC",
       "model": "RAM block",
@@ -97,7 +99,7 @@
       "sku": "DKC-RB-72"
     },
     {
-      "id": "9",
+      "id": "tp4",
       "title": "Встраиваемый распределительный щит",
       "brand": "VIKO",
       "model": "Lotus",
@@ -109,7 +111,7 @@
       "sku": "VIK-LOT-36"
     },
     {
-      "id": "10",
+      "id": "tp5",
       "title": "Щит малых габаритов",
       "brand": "TDM",
       "model": "SQ",
