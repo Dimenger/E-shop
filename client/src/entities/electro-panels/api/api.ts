@@ -1,5 +1,5 @@
 import axios from "axios";
-import type { ElectroPanel } from "./types";
+import type { ElectroPanel } from "../model/types";
 
 export const getProducts = async (
   endpoint: string,

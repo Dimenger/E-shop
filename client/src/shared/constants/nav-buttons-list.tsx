@@ -1,7 +1,8 @@
 export interface NavItem {
   readonly id: string;
   readonly title: string;
-  readonly path: string;
+  readonly path: string | null;
+  readonly isBack?: boolean;
 }
 
 export const NAV_BUTTONS_LIST = [
@@ -9,6 +10,7 @@ export const NAV_BUTTONS_LIST = [
   { id: "Services", title: "Направления", path: "/services" },
   { id: "Schedule", title: "Расписание", path: "/schedule" },
   { id: "Posts", title: "Новости", path: "/posts" },
+  { id: "Back", title: "Назад", path: null, isBack: true },
 ] as const satisfies readonly NavItem[];
 
 // satisfies проверит, что данные подходят под NavItem, но не "затрет" строгие ID

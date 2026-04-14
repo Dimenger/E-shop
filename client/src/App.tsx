@@ -8,7 +8,9 @@ import { Home } from "./pages/home/home";
 import { ErrorPage } from "./pages/error-page/error-page";
 import { LoaderSpinner } from "./shared/ui/loader-spinner";
 import { SinglePhasePage } from "./pages/single-phase-page/single-phase-page";
-import { getSinglePhaseLoader } from "./features/loaders/getSinglePhase.loader";
+import { ThreePhasePage } from "./pages/three-phase-page/three-phase-page";
+import { getSinglePhaseLoader } from "./entities/electro-panels/loaders/getSinglePhase.loader";
+import { getThreePhaseLoader } from "./entities/electro-panels/loaders/getThreePhase.loader";
 
 // import styles from "./App.module.css";
 
@@ -23,6 +25,12 @@ const routes = [
         path: "single-phase",
         element: <SinglePhasePage />,
         loader: getSinglePhaseLoader,
+        HydrateFallback: LoaderSpinner,
+      },
+      {
+        path: "three-phase",
+        element: <ThreePhasePage />,
+        loader: getThreePhaseLoader,
         HydrateFallback: LoaderSpinner,
       },
     ],
