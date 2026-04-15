@@ -1,9 +1,16 @@
-import { useLoaderData } from "react-router";
-import type { getSinglePhaseLoader } from "@/entities/electro-panels/loaders/getSinglePhase.loader";
 import { PanelList } from "@/entities/electro-panels/ui/PanelList";
+import { useAppSelector } from "@/app/hooks";
 
 export const SinglePhasePage = () => {
-  const items = useLoaderData<typeof getSinglePhaseLoader>();
+  // const dispatch = useAppDispatch();
+
+  const { items, isLoading, error } = useAppSelector(
+    (state) => state.electroPanels,
+  );
+
+  if (isLoading) return <div>Loading...</div>;
+  if (error) return <div>Error: {error}</div>;
+
   return (
     <div>
       <h1>SinglePhasePage</h1>
