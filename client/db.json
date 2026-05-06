@@ -1,198 +1,198 @@
 {
-  "single-phase": [
+  "panel_models": [
     {
-      "id": "sp2",
-      "title": "Щит распределительный 26 модулей",
-      "phase": 1,
-
-      "price": 25000,
-      "inStock": true,
-      "sku": "sp1-36",
-
-      "color": "white",
-      "material": "plastic",
-      "protectionClass": "IP41",
-
-      "maxModules": 36,
-      "dinRails": 3,
-
-      "mountingType": ["wall", "niche"],
-
-      "boxModelWall": "Tehnoplast C/EKF Unix",
-      "boxModelNiche": "Ekf Nova",
-
-      "widthWall": 287,
-      "heightWall": 485,
-      "depthWall": 112,
-
-      "widthNiche": 346,
-      "heightNiche": 592,
-      "depthNiche": 96,
-
-      "widthNicheCutout": 313,
-      "heightNicheCutout": 554,
-      "depthNicheCutout": 90,
-
-      "maxCurrentOptions": [32, 50],
-
-      "supportedInput32": [16, 25, 32],
-      "supportedInput50": [40, 50, 63],
-
-      "roomsSupported": [1, 2, 3, 4],
-      "groupsAverage": 17,
-      "hasOutdoorConsumers": true,
-
-      "rcdCount": 4,
-      "rcdType": "A",
-      "breakerCurve": "C",
-      "breakerCapacity": "6kA",
-      "voltageRelay": true
+      "id": 1,
+      "slug": "minimal",
+      "title": "Минимальная комплектация",
+      "description": "Простой функционал для квартир на 1-2 комнаты.",
+      "max_modules": 12,
+      "din_rails": 1,
+      "power_variants": ["до 32А", "до 50А"],
+      "has_vacation_mode": false,
+      "warranty": "1 год",
+      "features": [
+        "1 УЗО тип А (DEKraft)",
+        "6 групп освещения и розеток",
+        "Реле напряжения (базовое)"
+      ]
     },
     {
-      "id": "sp1",
-      "title": "Щит распределительный 36 модулей",
-      "phase": 1,
-
-      "price": 15000,
-      "inStock": true,
-      "sku": "sp1-36",
-
-      "color": "white",
-      "material": "plastic",
-      "protectionClass": "IP41",
-
-      "maxModules": 36,
-      "dinRails": 3,
-
-      "mountingType": ["wall", "niche"],
-
-      "boxModelWall": "Tehnoplast C/EKF Unix",
-      "boxModelNiche": "Ekf Nova",
-
-      "widthWall": 287,
-      "heightWall": 485,
-      "depthWall": 112,
-
-      "widthNiche": 346,
-      "heightNiche": 592,
-      "depthNiche": 96,
-
-      "widthNicheCutout": 313,
-      "heightNicheCutout": 554,
-      "depthNicheCutout": 90,
-
-      "maxCurrentOptions": [32, 50],
-
-      "supportedInput32": [16, 25, 32],
-      "supportedInput50": [40, 50, 63],
-
-      "roomsSupported": [1, 2, 3, 4],
-      "groupsAverage": 17,
-      "hasOutdoorConsumers": true,
-
-      "rcdCount": 4,
-      "rcdType": "A",
-      "breakerCurve": "C",
-      "breakerCapacity": "6kA",
-      "voltageRelay": true
+      "id": 2,
+      "slug": "basic",
+      "title": "Базовая версия",
+      "description": "Сбалансированный щит с возможностью подключения водонагревателя.",
+      "max_modules": 24,
+      "din_rails": 2,
+      "power_variants": ["до 32А", "до 50А"],
+      "has_vacation_mode": false,
+      "warranty": "1 год",
+      "features": [
+        "2 УЗО тип А (DEKraft)",
+        "11 групп линий",
+        "Реле напряжения (опционально с дисплеем)",
+        "Линия под водонагреватель"
+      ]
+    },
+    {
+      "id": 3,
+      "slug": "optimal",
+      "title": "Оптимальная версия",
+      "description": "Максимальный комфорт: неотключаемые линии, кондиционеры и теплые полы.",
+      "max_modules": 48,
+      "din_rails": 4,
+      "power_variants": ["до 32А", "до 50А"],
+      "has_vacation_mode": true,
+      "warranty": "1 год",
+      "features": [
+        "5 УЗО тип А (DEKraft)",
+        "23 группы",
+        "Функция Отпуск (мастер-свет)",
+        "Контроль тока и напряжения",
+        "Линии HVAC и теплых полов"
+      ]
     }
   ],
-  "three-phase": [
+  "enclosures": [
     {
-      "id": "tp1",
-      "title": "Щит распределительный 36 модулей",
-      "phase": 3,
-
-      "price": 15000,
-      "inStock": true,
-      "sku": "tp1-36",
-
-      "color": "white",
-      "material": "plastic",
-      "protectionClass": "IP41",
-
-      "maxModules": 36,
-      "dinRails": 3,
-
-      "mountingType": ["wall", "niche"],
-
-      "boxModelWall": "Tehnoplast C/EKF Unix",
-      "boxModelNiche": "Ekf Nova",
-
-      "widthWall": 287,
-      "heightWall": 485,
-      "depthWall": 112,
-
-      "widthNiche": 346,
-      "heightNiche": 592,
-      "depthNiche": 96,
-
-      "widthNicheCutout": 313,
-      "heightNicheCutout": 554,
-      "depthNicheCutout": 90,
-
-      "maxCurrentOptions": [32, 50],
-
-      "supportedInput32": [16, 25, 32],
-      "supportedInput50": [40, 50, 63],
-
-      "roomsSupported": [1, 2, 3, 4],
-      "groupsAverage": 17,
-      "hasOutdoorConsumers": true,
-
-      "rcdCount": 4,
-      "rcdType": "A",
-      "breakerCurve": "C",
-      "breakerCapacity": "6kA",
-      "voltageRelay": true
+      "id": 101,
+      "model_id": 1,
+      "type": "surface",
+      "name": "Tehnoplast/EKF/DEK",
+      "width": 256,
+      "height": 200,
+      "depth": 96,
+      "niche": null
     },
     {
-      "id": "tp2",
-      "title": "Щит распределительный 56 модулей",
-      "phase": 3,
+      "id": 102,
+      "model_id": 1,
+      "type": "flush",
+      "name": "Ekf Nova",
+      "width": 280,
+      "height": 222,
+      "depth": 92,
+      "niche": "258x200x56"
+    },
+    {
+      "id": 201,
+      "model_id": 2,
+      "type": "surface",
+      "name": "Tehnoplast/EKF/DEK/System Electric",
+      "width": 287,
+      "height": 361,
+      "depth": 112,
+      "niche": null
+    },
+    {
+      "id": 202,
+      "model_id": 2,
+      "type": "flush",
+      "name": "Ekf Nova/System Electric",
+      "width": 346,
+      "height": 442,
+      "depth": 96,
+      "niche": "313x401x90"
+    },
+    {
+      "id": 301,
+      "model_id": 3,
+      "type": "surface",
+      "name": "Tehnoplast C/EKF Unix",
+      "width": 287,
+      "height": 652,
+      "depth": 112,
+      "niche": null
+    },
+    {
+      "id": 302,
+      "model_id": 3,
+      "type": "flush",
+      "name": "Ekf Nova",
+      "width": 346,
+      "height": 717,
+      "depth": 96,
+      "niche": "313x677x90"
+    }
+  ],
+  "components": [
+    {
+      "id": 1,
+      "model_id": 1,
+      "name": "Реле напряжения (без дисплея)",
+      "type": "protection",
+      "is_persistent": true
+    },
+    {
+      "id": 2,
+      "model_id": 1,
+      "name": "УЗО 40А тип А",
+      "type": "rcd",
+      "is_persistent": false
+    },
+    {
+      "id": 3,
+      "model_id": 1,
+      "name": "АВ 16А (Розетки)",
+      "type": "mcb",
+      "is_persistent": false
+    },
 
-      "price": 85000,
-      "inStock": true,
-      "sku": "tp1-36",
+    {
+      "id": 10,
+      "model_id": 2,
+      "name": "Реле напряжения (выбор опции)",
+      "type": "protection",
+      "is_persistent": true
+    },
+    {
+      "id": 11,
+      "model_id": 2,
+      "name": "АВ 16А (Водонагреватель)",
+      "type": "mcb",
+      "is_persistent": false
+    },
 
-      "color": "white",
-      "material": "plastic",
-      "protectionClass": "IP41",
-
-      "maxModules": 36,
-      "dinRails": 3,
-
-      "mountingType": ["wall", "niche"],
-
-      "boxModelWall": "Tehnoplast C/EKF Unix",
-      "boxModelNiche": "Ekf Nova",
-
-      "widthWall": 287,
-      "heightWall": 485,
-      "depthWall": 112,
-
-      "widthNiche": 346,
-      "heightNiche": 592,
-      "depthNiche": 96,
-
-      "widthNicheCutout": 313,
-      "heightNicheCutout": 554,
-      "depthNicheCutout": 90,
-
-      "maxCurrentOptions": [32, 50],
-
-      "supportedInput32": [16, 25, 32],
-      "supportedInput50": [40, 50, 63],
-
-      "roomsSupported": [1, 2, 3, 4],
-      "groupsAverage": 17,
-      "hasOutdoorConsumers": true,
-
-      "rcdCount": 4,
-      "rcdType": "A",
-      "breakerCurve": "C",
-      "breakerCapacity": "6kA",
-      "voltageRelay": true
+    {
+      "id": 20,
+      "model_id": 3,
+      "name": "Вводной АВ DEKraft 6kA",
+      "type": "input",
+      "is_persistent": true
+    },
+    {
+      "id": 21,
+      "model_id": 3,
+      "name": "Реле напряжения V/A контроль",
+      "type": "protection",
+      "is_persistent": true
+    },
+    {
+      "id": 22,
+      "model_id": 3,
+      "name": "Контактор (Функция Отпуск)",
+      "type": "control",
+      "is_persistent": true
+    },
+    {
+      "id": 23,
+      "model_id": 3,
+      "name": "АВ 10А (Холодильник)",
+      "type": "mcb",
+      "is_persistent": true
+    },
+    {
+      "id": 24,
+      "model_id": 3,
+      "name": "АВ 16А (Кондиционер 1)",
+      "type": "mcb",
+      "is_persistent": false
+    },
+    {
+      "id": 25,
+      "model_id": 3,
+      "name": "АВ 16А (Теплый пол 1)",
+      "type": "mcb",
+      "is_persistent": false
     }
   ]
 }

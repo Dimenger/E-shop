@@ -7,9 +7,10 @@ export interface NavItem {
 
 export const NAV_BUTTONS_LIST = [
   { id: "Home", title: "Главная", path: "/" },
-  { id: "Services", title: "Направления", path: "/services" },
-  { id: "Schedule", title: "Расписание", path: "/schedule" },
-  { id: "Posts", title: "Новости", path: "/posts" },
+  { id: "Areas", title: "Направления", path: "/areas" },
+  { id: "Panels", title: "Электрощиты", path: "/panels" },
+  { id: "News", title: "Новости", path: "/news" },
+  { id: "Contacts", title: "Контакты", path: "/contacts" },
   { id: "Back", title: "Назад", path: null, isBack: true },
 ] as const satisfies readonly NavItem[];
 

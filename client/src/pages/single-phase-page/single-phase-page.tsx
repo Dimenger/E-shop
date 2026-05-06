@@ -1,20 +1,19 @@
+// SinglePhasePage.tsx
+import { useGetElectroPanelsQuery } from "@/entities/electro-panels/api"; // ваш хук из createApi
 import { PanelList } from "@/entities/electro-panels/ui/PanelList";
-import { useAppSelector } from "@/app/hooks";
 
 export const SinglePhasePage = () => {
-  // const dispatch = useAppDispatch();
+  // Хук вернет данные из кэша (прогретого лоадером)
+  const { data: models = [], isLoading, error } = useGetElectroPanelsQuery();
 
-  const { items, isLoading, error } = useAppSelector(
-    (state) => state.electroPanels,
-  );
-
-  if (isLoading) return <div>Loading...</div>;
-  if (error) return <div>Error: {error}</div>;
+  if (isLoading) return <div>Загрузка...</div>;
+  if (error) return <div>Ошибка загрузки</div>;
 
   return (
     <div>
-      <h1>SinglePhasePage</h1>
-      <PanelList items={items} />
+      <h1>Однофазные электрощиты</h1>
+      {/* Теперь models точно будет массивом, даже если он пустой */}
+      <PanelList items={models} />
     </div>
   );
 };

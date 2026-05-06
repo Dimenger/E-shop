@@ -25,15 +25,33 @@
 }
 
 .link :hover {
-  color: orangered;
-  background-color: yellow;
-  font-weight: 600;
+  box-shadow: 0 0 15px rgba(209, 209, 209, 0.4);
+  background-color: #333;
 }
 
 .activeLink button {
-  color: orangered;
-  background-color: yellow;
-  font-weight: 600
+  /* Усиливаем яркость за счет наложения нескольких теней */
+  box-shadow:
+    0 0 10px rgba(255, 255, 255, 0.6),
+    /* Внутреннее белое свечение */
+    0 0 25px rgba(209, 209, 209, 0.8),
+    /* Основной ореол припоя */
+    0 0 40px rgba(209, 209, 209, 0.3),
+    /* Дальнее мягкое рассеивание */
+    /* Внутренние тени для эффекта граней чипа */
+    inset 2px 2px 5px rgba(255, 255, 255, 0.2),
+    inset -2px -2px 5px rgba(0, 0, 0, 0.5);
+
+  /* Объем корпуса */
+  background-color: #444;
+  /* Чуть светлее фон, чтобы кнопка "ожила" */
+  border-color: #ffffff;
+  /* Сама рамка становится белее от накала */
+  color: #fff;
+  /* Текст тоже вспыхивает */
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  /* Кнопка как бы приподнимается */
 }
 
 .activeLink {

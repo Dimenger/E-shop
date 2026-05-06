@@ -1,13 +1,22 @@
-import { electroPanelsReducer } from "@/entities/electro-panels/model/panel.slice";
 import { configureStore } from "@reduxjs/toolkit";
-// import logger from "redux-logger";
+// 1. Импортируем редьюсеры
+import { panelsReducer } from "../entities/electro-panels/model/panel.slice";
+// 2. Импортируем API сервис
+import { electroApi } from "../entities/electro-panels/api";
 
 export const store = configureStore({
-  reducer: { electroPanels: electroPanelsReducer },
-  // middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
+  reducer: {
+    // Добавляем обычный слайс (для UI)
+    panels: panelsReducer,
+
+    // Добавляем API (ключ берется из самого api)
+    [electroApi.reducerPath]: electroApi.reducer,
+  },
+  // 3. ОБЯЗАТЕЛЬНО: добавляем middleware для работы кэширования и запросов
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(electroApi.middleware),
 });
 
-// Infer the `RootState` and `AppDispatch` types from the store itself
+// Типизация для хуков
 export type RootState = ReturnType<typeof store.getState>;
-// Inferred type: {posts: PostsState, comments: CommentsState, users: UsersState}
 export type AppDispatch = typeof store.dispatch;

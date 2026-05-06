@@ -5,14 +5,62 @@
     cursor: pointer;
     transition: 0.2s;
     border: none;
+    font-family: 'Rajdhani', sans-serif;
+    letter-spacing: 1px;
 }
 
 /* variants */
 .nav-button {
-    background: #3b82f6;
-    color: white;
-    width: 180px;
-    height: 40px;
+    position: relative;
+    padding: 10px 25px;
+    background-color: #2a2a2a;
+    /* Темный корпус микросхемы */
+    color: #e5e4e2;
+    /* Цвет текста (платина) */
+    border: 2px solid #d1d1d1;
+    /* Цвет припоя */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    box-shadow:
+        /* Внутренние тени для эффекта граней чипа */
+        inset 2px 2px 5px rgba(255, 255, 255, 0.2),
+        inset -2px -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.nav-button::before,
+.nav-button::after {
+    content: "";
+    position: absolute;
+    width: 8px;
+    /* Длина контакта наружу */
+    height: 2px;
+    /* Толщина контакта */
+    background: #d1d1d1;
+    /* Цвет припоя */
+}
+
+/* Контакты слева */
+.nav-button::before {
+    left: -8px;
+    /* Множественные тени создают несколько "ножек" */
+    box-shadow:
+        0 8px 0 #d1d1d1,
+        0 -8px 0 #d1d1d1;
+}
+
+/* Контакты справа */
+.nav-button::after {
+    right: -8px;
+    box-shadow:
+        0 8px 0 #d1d1d1,
+        0 -8px 0 #d1d1d1;
 }
 
 .confirm {

@@ -1,13 +1,17 @@
+// PanelList.tsx
+import { type ElectroPanelModel } from "../model/types";
 import { PanelCard } from "./PanelCard";
-import type { ElectroPanel } from "../model/types";
 
 interface Props {
-  items: ElectroPanel[];
+  items: ElectroPanelModel[]; // Описываем, что компонент ждет items
 }
 
 export const PanelList = ({ items }: Props) => {
+  // Принимаем items
+  if (items.length === 0) return <div>Щиты не найдены</div>;
+
   return (
-    <div>
+    <div style={{ display: "grid", gap: "20px" }}>
       {items.map((item) => (
         <PanelCard key={item.id} item={item} />
       ))}

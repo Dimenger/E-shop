@@ -1,37 +1,46 @@
-import { useNavigate, NavLink } from "react-router";
+import { useLocation, useNavigate } from "react-router";
+
+import { Button } from "@/shared/ui/button/Button";
+import styles from "./control-panel.module.css";
 import {
   NAV_BUTTONS_LIST,
   type NavItem,
 } from "@/shared/constants/nav-buttons-list";
-import { Button } from "@/shared/ui/button/Button";
-import styles from "./control-panel.module.css";
 
 export const ControlPanel = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
-    <div>
-      {NAV_BUTTONS_LIST.map((button: NavItem) => {
-        if (button.isBack) {
-          return (
-            <Button key={button.id} type="button" onClick={() => navigate(-1)}>
-              {button.title}
-            </Button>
-          );
-        }
+    <div className={styles.controlPanelContainer}>
+      <div className={styles.buttonsContainer}>
+        {NAV_BUTTONS_LIST.map((button: NavItem) => {
+          if (button.isBack) {
+            return (
+              <Button
+                key={button.id}
+                type="button"
+                onClick={() => navigate(-1)}
+              >
+                {button.title}
+              </Button>
+            );
+          }
 
-        return (
-          <NavLink
-            key={button.id}
-            className={({ isActive }) =>
-              isActive ? styles.activeLink : styles.link
-            }
-            to={button.path!}
-          >
-            <Button>{button.title}</Button>
-          </NavLink>
-        );
-      })}
+          const isActive = location.pathname === button.path;
+
+          return (
+            <div
+              key={button.id}
+              className={isActive ? styles.activeLink : undefined}
+            >
+              <Button type="button" onClick={() => navigate(button.path!)}>
+                {button.title}
+              </Button>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };

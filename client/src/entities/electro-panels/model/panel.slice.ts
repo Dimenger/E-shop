@@ -1,67 +1,36 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { ElectroPanel } from "./types";
-import {
-  fetchElectroPanels,
-  updateElectroPanel,
-  createElectroPanel,
-  deleteElectroPanel,
-} from "../api/api";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import type { ElectroPanelModel } from "./types";
 
-interface ElectroPanelsState {
-  items: ElectroPanel[];
-  current: ElectroPanel | null;
-  isLoading: boolean;
-  error: string | null;
+export interface PanelState {
+  currentModel: ElectroPanelModel | null;
+  selectedEnclosureId: number | null;
 }
 
-export const initialElectroPanelsState: ElectroPanelsState = {
-  items: [],
-  current: null,
-  isLoading: false,
-  error: null,
+const initialState: PanelState = {
+  currentModel: null,
+  selectedEnclosureId: null,
 };
 
 export const panelsSlice = createSlice({
-  name: "electroPanels",
-  initialState: initialElectroPanelsState,
+  name: "uiPanels",
+  initialState,
   reducers: {
-    setCurrentPanel: (state, action: { payload: ElectroPanel | null }) => {
-      state.current = action.payload;
+    setCurrentModel: (
+      state,
+      action: PayloadAction<ElectroPanelModel | null>,
+    ) => {
+      state.currentModel = action.payload;
+      if (action.payload?.enclosures?.length) {
+        state.selectedEnclosureId = action.payload.enclosures[0].id;
+      } else {
+        state.selectedEnclosureId = null;
+      }
     },
-  },
-  extraReducers: (builder) => {
-    builder
-      // fetch
-      .addCase(fetchElectroPanels.pending, (state) => {
-        state.isLoading = true;
-        state.error = null;
-      })
-      .addCase(fetchElectroPanels.fulfilled, (state, action) => {
-        state.isLoading = false;
-        state.items = action.payload;
-      })
-      .addCase(fetchElectroPanels.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.error.message || "Error";
-      })
-
-      // update
-      .addCase(updateElectroPanel.fulfilled, (state, action) => {
-        const idx = state.items.findIndex((i) => i.id === action.payload.id);
-        if (idx !== -1) state.items[idx] = action.payload;
-      })
-
-      // create
-      .addCase(createElectroPanel.fulfilled, (state, action) => {
-        state.items.unshift(action.payload);
-      })
-
-      // delete
-      .addCase(deleteElectroPanel.fulfilled, (state, action) => {
-        state.items = state.items.filter((i) => i.id !== action.payload);
-      });
+    setSelectedEnclosure: (state, action: PayloadAction<number>) => {
+      state.selectedEnclosureId = action.payload;
+    },
   },
 });
 
-export const { setCurrentPanel } = panelsSlice.actions;
-export const electroPanelsReducer = panelsSlice.reducer;
+export const { setCurrentModel, setSelectedEnclosure } = panelsSlice.actions;
+export const panelsReducer = panelsSlice.reducer;
